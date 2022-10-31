@@ -1,0 +1,72 @@
+<style>
+  body {
+    background-image: url('../img/alugue-seu-carro.jpeg');
+    background-color: #063146;
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover;
+  }
+
+  label #bar-btn,
+  label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+  }
+
+  label #bar-btn {
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: aliceblue;
+    padding: 6px 12px;
+  }
+
+  label #cancel {
+    z-index: 1111;
+    left: 195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+  }
+
+  ul li:hover a {
+    padding-left: 50px;
+  }
+
+  ul a i {
+    margin-right: 16px;
+  }
+
+  #check:checked~.sidebar {
+    left: 0;
+  }
+
+  section img {
+    background: no-repeat;
+    margin-left: 50px;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+</style>
+
+
+
+<div class="sidebar">
+  <header>Locadora</header>
+  <ul>
+    <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
+    <li><a ui-sref="cars"><i class="fa-solid fa-car"></i>Carros</a></li>
+    <li><a ui-sref="userRents" ng-click=""><i class="fa-solid fa-key"></i>Reservas</a></li>
+    <li><a ui-sref="profilepage" ng-click=""><i class="fa-solid fa-user"></i>Perfil</a></li>
+    <li><a ui-sref="" ng-click="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+  </ul>
+</div>
+
+<section>
+  <header id="header2">Olá, {{user.name}}</header>
+</section>
+</div>

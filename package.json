@@ -1,0 +1,22 @@
+{
+  "name": "angular1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "angular-popeye": "^1.0.5",
+    "angular-ui-mask": "^1.8.7",
+    "ng-dialog": "^1.4.0",
+    "ui-bootstrap": "^0.1.11"
+  }
+}

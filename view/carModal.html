@@ -1,0 +1,32 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Digite seu email..." ng-model="user.email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <div id="typePassword">
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Digite sua senha..." ng-model="user.password"><button class="btn" id="eye-btn"><i
+                            class="fa-solid fa-eye-slash"></i></button>
+                </div>
+            </div>
+            <div id="submit">
+                <button type="submit" class="btn" id="submitBtn" ng-click="login()">Enviar</button>
+                <a id="forgotPassword" ui-sref=""><u>Esqueci a minha senha</u></a>
+            </div>
+            <div class="strike">
+                <span>ou</span>
+            </div>
+            <div id="registro">
+                <a class="form-control" id="createAcc" ui-sref="" ng-click="cancel()">Criar conta</a>
+            </div>
+        </form>
+    </div>
+</div>

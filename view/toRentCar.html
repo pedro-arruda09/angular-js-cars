@@ -1,0 +1,138 @@
+<style>
+  body {
+    background-image: url('../img/alugue-seu-carro.jpeg');
+    background-color: #063146;
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover;
+  }
+
+  label #bar-btn,
+  label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+  }
+
+  label #bar-btn {
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: aliceblue;
+    padding: 6px 12px;
+  }
+
+  label #cancel {
+    z-index: 1111;
+    left: 195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+  }
+
+  ul li:hover a {
+    padding-left: 50px;
+  }
+
+  ul a i {
+    margin-right: 16px;
+  }
+
+  #check:checked~.sidebar {
+    left: 0;
+  }
+
+  section img {
+    background: no-repeat;
+    margin-left: 50px;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  .card {
+    background: #063146;
+    height: 450px;
+    width: 261px;
+    margin: 10px;
+    border-radius: 15px;
+    color: aliceblue;
+  }
+
+  .card:hover {
+    background-color: aliceblue;
+    color: #063146;
+    transform: scale(1.03);
+  }
+
+  .card-image {
+    background-color: #063146;
+    border-radius: 15px 15px 0 0;
+    height: 170px;
+    margin-bottom: 15px;
+    background-size: cover;
+  }
+
+  #card-img {
+    margin-left: -1px;
+    height: 170px;
+    margin-bottom: 15px;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+    margin-right: 10px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h6 {
+    margin-left: 10px;
+  }
+
+  .card a {
+    background-color: black;
+    color: aliceblue;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 50px;
+  }
+</style>
+
+<div class="sidebar">
+  <header>Locadora</header>
+  <ul>
+      <li><a ui-sref="userpage"><i class="fa-solid fa-home"></i>Início</a></li>
+      <li><a ui-sref="profilepage" ng-click=""><i class="fa-solid fa-user"></i>Perfil</a></li>
+      <li><a ui-sref="" ng-click="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+  </ul>
+</div>
+
+<section>
+  <header id="header2">Aluguel</header>
+
+  <div class="grid-container">
+    <section class="grid-item" ng-repeat="availableCar in availableCars">
+      <div class="card">
+        <div class="card-image"><img id="card-img" ng-src="../img/{{availableCar.photo.originalname}}" alt=""></div>
+        <h2>{{availableCar.model}}</h2>
+        <h6>Ano: {{availableCar.year}}</h6>
+        <h6>Diária: {{availableCar.daily_price | currency}}</h6>
+        <h6>Chassi: {{availableCar.chassi}}</h6>
+        <a id="selectCars" href="">Selecionar</a>
+      </div>
+    </section>
+  </div>
+
+</section>

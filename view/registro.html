@@ -1,0 +1,107 @@
+<!-- <div class="modal-content" style="background-color: #0a5275;">
+    <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Digite seu email..." ng-model="user.email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <div id="typePassword">
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Digite sua senha..." ng-model="user.password">
+                </div>
+            </div>
+            <div id="submit">
+                <button type="submit" class="btn" id="submitBtn" ng-click="login()">Enviar</button>
+                <a id="forgotPassword" ui-sref=""><u>Esqueci a minha senha</u></a>
+            </div>
+            <div class="strike">
+                <span>ou</span>
+            </div>
+            <div id="registro">
+                <a class="form-control" id="createAcc" ui-sref="" ng-click="cancel()">Criar conta</a>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<style>
+  body {
+    background-image: url('../img/alugue-seu-carro.jpeg');
+    background-color: #063146;
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover;
+  }
+</style>
+
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem; background-color: #0a5275;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: aliceblue; margin-left: 20px;">Registre-se agora e alugue seu carro<br />
+                </h1>
+                <p class="mb-4 opacity-70" style="color: aliceblue; margin-left: 20px;">
+                  Alugue um carro da sua vontade e pague um preço justo, com possibilidade de parcelamento e a quantidade de
+                  diárias que você desejar!
+                </p>
+                <img src="../img/353-3533370_cotizador-web-gratis2-icono-de-registro-png-removebg-preview.png" style="height: 260px; margin-left: 50px;">
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form>
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0" style="color: aliceblue;">Locadora</span>
+                  </div>
+
+                  <h4 style="color: aliceblue; margin-bottom: 20px;">Registro</h4>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1" class="form-control" placeholder="Digite seu nome..."
+                      ng-model="user.name" />
+                    <label class="form-label" for="form3Example1" style="color: aliceblue;">Nome</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="form-control" placeholder="Digite seu email..."
+                      ng-model="user.email" />
+                    <label class="form-label" for="form3Example3" style="color: aliceblue">Email</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4" class="form-control" placeholder="Digite sua senha..."
+                      ng-model="user.password" />
+                    <label class="form-label" for="form3Example4" style="color: aliceblue">Senha</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example4" class="form-control" ng-model="user.cpf" ui-mask="999.999.999-99"/>
+                    <label class="form-label" for="form3Example4" style="color: aliceblue">CPF</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button type="submit" class="btn btn-primary btn-block mb-4"
+                      ng-click="addUsers()">Registre-se</button>
+
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
