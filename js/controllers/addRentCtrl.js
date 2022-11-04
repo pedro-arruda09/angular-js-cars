@@ -1,53 +1,59 @@
-myApp.controller("addRentCtrl", function ($scope, carService, rentService, capitalService, $location, $q) {
-    $scope.form = {
-        car_id: ''
-    };
+myApp.controller("addRentCtrl", [
+    '$scope', 
+    'carService', 
+    'rentService', 
+    'capitalService',  
+    function ($scope, carService, rentService, capitalService) {
 
-    $scope.cars = [];
+        $scope.form = {
+            car_id: ''
+        };
 
-    const init = () => {
-        listCars();
-        listCapitals();
-        addCar();
-    }
+        $scope.cars = [];
 
-    const listCars = () => {
-        return carService.get().then(resp => {
-            $scope.cars = resp.data;
-        }).catch(() => {
-            $scope.error = "Unable to load data.";
-        }); 
-    };
+        const init = () => {
+            listCars();
+            listCapitals();
+            addCar();
+        }
 
-    const addCar = () => {
-        console.log($scope.cars);
-        $scope.cars.forEach(car => {
-            if (car.id === ~~$scope.form.car_id) {
-                car.selected = true;
-            }
-        });
+        const listCars = () => {
+            return carService.get().then(resp => {
+                $scope.cars = resp.data;
+            }).catch(() => {
+                $scope.error = "Unable to load data.";
+            }); 
+        };
 
-        $scope.form.car_id = ''
-    }
+        const addCar = () => {
+            console.log($scope.cars);
+            $scope.cars.forEach(car => {
+                if (car.id === ~~$scope.form.car_id) {
+                    car.selected = true;
+                }
+            });
 
-    const addRent = () => {
-        console.log($scope.rent)
-        return
-        rentService.create($scope.rent).then(() => {
-            $location.path('/')
-        }).catch(error => {
-            console.log(error);
-        });
-    };
+            $scope.form.car_id = ''
+        }
 
-    const listCapitals = () => {
-        return capitalService.get().then(resp => {
-            $scope.capitals = resp.data;
-        }).catch(() => {
-            $scope.error = "Unable to load data.";
-        });
-    };
+        const addRent = () => {
+            console.log($scope.rent)
+            return
+            rentService.create($scope.rent).then(() => {
+                $location.path('/')
+            }).catch(error => {
+                console.log(error);
+            });
+        };
 
-    $scope.addRent = addRent;
-    init();
-});
+        const listCapitals = () => {
+            return capitalService.get().then(resp => {
+                $scope.capitals = resp.data;
+            }).catch(() => {
+                $scope.error = "Unable to load data.";
+            });
+        };
+
+        $scope.addRent = addRent;
+        init();
+}]);

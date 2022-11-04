@@ -61,7 +61,6 @@
         <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
         <li><a ui-sref="cars"><i class="fa-solid fa-car"></i>Carros</a></li>
         <li><a ui-sref="userRents" ng-click=""><i class="fa-solid fa-key"></i>Reservas</a></li>
-        <li><a ui-sref="profilepage" ng-click=""><i class="fa-solid fa-user"></i>Perfil</a></li>
         <li><a ui-sref="" ng-click="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
     </ul>
 </div>
@@ -97,7 +96,7 @@
         <div class="card text-center" style="width: 18rem; margin: 30px 0px 0px 30px; background-color: #063146; color: aliceblue;">
             <div class="card-body">
                 <h3 class="card-title">CPF</h3>
-                <p class="card-text">{{user.cpf}}</p>
+                <p class="card-text">{{user.cpf | cpf}}</p>
                 <a ui-sref="edit-user" class="btn btn-primary">EDITAR</a>
             </div>
         </div>

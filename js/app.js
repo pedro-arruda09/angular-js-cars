@@ -9,10 +9,30 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         url: "/",
         templateUrl: "view/home.html",
         controller: "userCtrl"
+    }).state("rent", {
+        url: "/aluguel",
+        templateUrl: "view/rent.html",
+        controller: "storeRentCtrl",
+    }).state("cars", {
+        url: "/carros",
+        templateUrl: "view/availableCars.html",
+        controller: "availableCarsCtrl",
+    }).state("login", {
+        url: "/login",
+        templateUrl: "view/login.html",
+        controller: "authCtrl"
+    }).state("recoverPassword", {
+        url: "/recuperar-senha",
+        templateUrl: "view/recoverPassword.html",
+        controller: "recoverPasswordCtrl"
+    }).state("changePassword", {
+        url: "/trocar-senha",
+        templateUrl: "view/changePassword.html",
+        controller: "changePasswordCtrl"
     }).state("register", {
         url: "/registro",
         templateUrl: "view/registro.html",
-        controller: "userCtrl"
+        controller: "registerCtrl"
     }).state("userpage", {
         url: "/inicio/perfil",
         templateUrl: "view/userpage.html",
@@ -23,27 +43,10 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         templateUrl: "view/userRents.html",
         controller: "rentCtrl",
         onEnter: isAuthorized
-    }).state("cars", {
-        url: "/carros",
-        templateUrl: "view/availableCars.html",
-        controller: "carCtrl",
     }).state("toRentCars", {
-        url: "/carros",
+        url: "/escolher-carro",
         templateUrl: "view/toRentCar.html",
-        controller: "carCtrl",
-    }).state("rent", {
-        url: "/aluguel",
-        templateUrl: "view/rent.html",
-        controller: "carCtrl",
-    }).state("pdf", {
-        url: "/aluguel/pdf",
-        templateUrl: "view/pdf.html",
-        controller: "pdfCtrl",
-        onEnter: isAuthorized
-    }).state("login", {
-        url: "/login",
-        templateUrl: "view/login.html",
-        controller: "authCtrl"
+        controller: "availableCarsCtrl",
     }).state("profilepage", {
         url: "/meu-perfil",
         templateUrl: "view/profilePage.html",
@@ -54,12 +57,16 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         templateUrl: "view/editUser.html",
         controller: "editUserCtrl",
         onEnter: isAuthorized
+    }).state("rentCart", {
+        url: "/carrinho",
+        templateUrl: "view/rentCart.html",
+        controller: "rentCartCtrl",
     });
 });
 
 const isAuthorized = ($state, $rootScope) => {
     const isLogged = localStorage.getItem("token");
-  
+    
     if (!isLogged) {
       $state.go("login");
       return;

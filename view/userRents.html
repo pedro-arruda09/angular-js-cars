@@ -71,8 +71,8 @@
 <div class="sidebar">
   <header>Locadora</header>
   <ul>
-    <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
-    <li><a ui-sref=""><i class="fa-solid fa-car"></i>Carros</a></li>
+    <li><a ui-sref="userpage"><i class="fa-solid fa-home"></i>Início</a></li>
+    <li><a ui-sref="cars"><i class="fa-solid fa-car"></i>Carros</a></li>
     <li><a ui-sref="profilepage" ng-click=""><i class="fa-solid fa-user"></i>Perfil</a></li>
     <li><a ui-sref="" ng-click="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
   </ul>
@@ -83,19 +83,17 @@
 
   <div class="grid-container" style="justify-content: center;">
     <section class="grid-item" ng-repeat="userRent in userRents">
-      <div class="card" style="background-color: #0a5275; width: 18rem;">
-        <!-- <div class="card-image"><img id="card-img" ng-src="" alt=""></div> -->
-        <h4>{{userRent.car.model}}</h4>
-        <h4>{{userRent.car.daily_price | currency}}</h4>
+      <div class="card" style="background-color: #0a5275; width: 500px; padding: 25px; margin: 50px 0px 0px 0px; border-radius: 5%;">
+        <h1>{{userRent.car.model}}</h1>
+        <h1>{{userRent.car.daily_price | currency}}</h1>
         <h6></h6>
         <h6></h6>
-        <button type="button" class="btn btn-danger" style="width: 10rem; margin-left: 60px;">Devolver</button>
+        <button ng-click="returnRent(userRent.id, userRent.car.id)" type="button" class="btn btn-danger" style="width: 300px; height: 60px; margin-left: auto; margin-right: auto; font-size: 25px;">Devolver</button>
       </div>
     </section>
   </div>
-    <section class="grid-item" ng-if="!userRents.length">
+    <section class="grid-item" ng-show="!userRents.length">
       <div class="card" style="background-color: #0a5275; width: 500px; padding: 25px; margin: 50px 0px 0px 690px; border-radius: 5%;">
-        <!-- <div class="card-image"><img id="card-img" ng-src="" alt=""></div> -->
         <h1>Você não possui nenhuma reserva, deseja alugar algum carro?</h4>
         <a ui-sref="rent"><button type="button" class="btn btn-success" style="width: 200px; height: 100px; margin-top: 30px; font-size: 35px;">RESERVAR</button></a>
       </div>

@@ -1,15 +1,15 @@
-myApp.controller("carPhotoCtrl", function ($scope, carPhotoService) {
-    // const init = () => {
-    //     $q.all([listUsers()])
-    // }
+// myApp.controller("carPhotoCtrl", function ($scope, carPhotoService) {
+//     // const init = () => {
+//     //     $q.all([listUsers()])
+//     // }
 
-    const listCarPhotos = () => {
-        return carPhotoService.get().then(resp => {
-                $scope.carPhotos = resp.data;
-            }).catch(() => {
-                $scope.error = "Unable to load data.";
-            }); 
-    };
+//     const listCarPhotos = () => {
+//         return carPhotoService.get().then(resp => {
+//                 $scope.carPhotos = resp.data;
+//             }).catch(() => {
+//                 $scope.error = "Unable to load data.";
+//             }); 
+//     };
 
-    listCarPhotos();
-});
+//     listCarPhotos();
+// });

@@ -125,12 +125,12 @@
   <div class="grid-container">
     <section class="grid-item" ng-repeat="availableCar in availableCars">
       <div class="card">
-        <div class="card-image"><img id="card-img" ng-src="../img/{{availableCar.photo.originalname}}" alt=""></div>
-        <h2>{{availableCar.model}}</h2>
-        <h6>Ano: {{availableCar.year}}</h6>
-        <h6>Diária: {{availableCar.daily_price | currency}}</h6>
-        <h6>Chassi: {{availableCar.chassi}}</h6>
-        <a id="selectCars" href="">Selecionar</a>
+        <div class="card-image"><img id="card-img" ng-src="../img/{{availableCar.originalname}}" alt=""></div>
+        <h2>{{availableCar.car.model}}</h2>
+        <h6>Ano: {{availableCar.car.year}}</h6>
+        <h6>Diária: {{availableCar.car.daily_price | currency}}</h6>
+        <h6>Chassi: {{availableCar.car.chassi}}</h6>
+        <a ng-click="setQueryCar(availableCar.car.id)" id="selectCars" href="">Selecionar</a>
       </div>
     </section>
   </div>

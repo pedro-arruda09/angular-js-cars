@@ -1,0 +1,33 @@
+<div class="popup" style="background-color: #063146;">
+    <form>
+        <div class="d-flex align-items-center mb-3 pb-1">
+            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+            <span class="h1 fw-bold mb-0" style="color: aliceblue;">Locadora</span>
+        </div>
+
+        <h4 style="color: aliceblue; margin-bottom: 20px;">Login</h4>
+
+        <div class="form-outline mb-4">
+            <input type="email" id="form2Example17" class="form-control form-control-lg"
+                placeholder="Digite seu email..." ng-model="user.email" ng-required="true"
+                style="width: 380px; margin-left: 60px;" />
+            <label class="form-label" for="form2Example17" style="color: aliceblue; margin-left: 60px;">Email</label>
+        </div>
+
+        <div class="form-outline mb-4">
+            <input type="password" id="form2Example27" class="form-control form-control-lg"
+                placeholder="Digite sua senha..." ng-model="user.password"
+                style="width: 380px; margin-left: 60px;" />
+            <label class="form-label" for="form2Example27" style="color: aliceblue; margin-left: 60px;">Senha</label>
+        </div>
+
+        <div class="pt-1 mb-4">
+            <button class="btn btn-dark btn-lg btn-block" type="button" style="color: aliceblue; width: 380px; margin-left: 60px;" ng-click="login()"
+                ng-disabled="!user.email || !user.password">Login</button>
+        </div>
+
+        <a class="small text" ui-sref="#!" style="color: aliceblue; margin-left: 60px;">Esqueceu sua senha?</a>
+        <p class="mb-5 pb-lg-2" style="color: aliceblue; margin-left: 60px;">Não possui conta? <a ui-sref="register"
+                style="color: aliceblue;">Registre-se aqui</a></p>
+    </form>
+</div>

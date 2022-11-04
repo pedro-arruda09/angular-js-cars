@@ -60,7 +60,7 @@
     <ul>
         <li><a ui-sref="userpage"><i class="fa-solid fa-home"></i>Início</a></li>
         <li><a ui-sref=""><i class="fa-solid fa-car"></i>Carros</a></li>
-        <li><a ui-sref="login"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+        <li ng-if="!isLogged"><a ui-sref="login"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
     </ul>
 </div>
 
@@ -79,61 +79,29 @@
                 <h3>Alugue seu carro</h3>
             </div>
             <form id="rent-form">
-                <input ng-model="form.capital_id"
+                <input ng-model="capitalName" ng-change="listCapitals()" ng-model-options="{ debounce: 500 }"
                     uib-typeahead="capital.name for capital in capitals | filter: $viewValue" class="form-control"
-                    type="text" placeholder="Pesquisar cidades..." style="height: 48px; width: 448px" id="capital-input">
+                    type="text" placeholder="Pesquisar cidades..." style="height: 48px; width: 448px"
+                    id="capital-input">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <input type="date" id="form3Example4" class="form-control form-control-lg" placeholder=""
-                            ng-model="sendRent.rent_started_at" style="width: 224px; height: 48px;" />
+                            ng-model="rent_started_at" style="width: 224px; height: 48px;" />
                         <label class="form-label" for="form3Example4">A partir de</label>
                     </div>
                     <div class="form-group col-md-6">
                         <input type="date" id="form3Example5" class="form-control form-control-lg" placeholder=""
-                            ng-model="sendRent.rent_end_at" style="width: 224px; height: 48px; margin-left: -67px;" />
+                            ng-model="rent_end_at" style="width: 224px; height: 48px; margin-left: -67px;" />
                         <label class="form-label" for="form3Example5">Aluguel até</label>
                     </div>
                 </div>
 
                 <div class="text-center text-lg-start mt-4 pt-2">
-                    <a ui-sref="toRentCars"><button type="button" class="btn btn-primary btn-lg"
-                        id="rent-btn"><i class="fa-solid fa-magnifying-glass"></i>Pesquisar carros</button></a>
+                    <button type="button" class="btn btn-primary btn-lg" id="rent-btn" ng-click="setQueryString()">
+                        <i class="fa-solid fa-magnifying-glass"></i>Pesquisar carros</button>
                 </div>
             </form>
         </div>
-        <!-- <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin: 300px 0px 0px 700px;">
-            <form>
-                <input ng-model="form.car_id" ng-change="addCar()" uib-typeahead="car.model for car in cars | filter: $viewValue" class="form-control" type="text" placeholder="Pesquisar carros..." style="height: 48px; width: 448px">
-                <select ng-model="form.car_id" ng-change="addCar()" value="" class="custom-select"
-                    style="width: 448px; height: 48px;">
-                    <option value="">Escolha o seu carro</option>
-                    <option ng-repeat="car in cars | orderBy: 'model'" value="{{car.id}}">{{car.model}}</option>
-                </select>
-                <select value="" class="custom-select" style="width: 448px; height: 48px;">
-                    <option>Escolha a sua cidade</option>
-                    <option ng-repeat="capital in capitals | orderBy: 'name'" value="{{capital.id}}">{{capital.name}}
-                    </option>
-                </select>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <input type="date" id="form3Example4" class="form-control form-control-lg" placeholder=""
-                            ng-model="sendRent.rent_started_at" />
-                        <label class="form-label" for="form3Example4">A partir de</label>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <input type="date" id="form3Example5" class="form-control form-control-lg" placeholder=""
-                            ng-model="sendRent.rent_end_at" />
-                        <label class="form-label" for="form3Example5">Aluguel até</label>
-                    </div>
-                </div>
-
-                <div class="text-center text-lg-start mt-4 pt-2">
-                    <button type="button" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #03045E; margin-top: -30px;"
-                        ng-click="addRent()">Alugar</button>
-                </div>
-            </form>
-        </div> -->
     </section>
 </section>
 </div>
