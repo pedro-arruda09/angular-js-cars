@@ -1,0 +1,20 @@
+<div class="sidebar" ng-if="!isLogged">
+    <header>Locadora</header>
+    <ul>
+        <li><a ui-sref="homepage"><i class="fa-solid fa-home"></i>Início</a></li>
+        <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
+        <li><a ui-sref="cars"><i class="fa-solid fa-car"></i>Carros</a></li>
+        <li><a ui-sref="login"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+    </ul>
+</div>
+
+<div class="sidebar" ng-if="isLogged">
+    <header>Locadora</header>
+    <ul>
+        <li><a ui-sref="userpage"><i class="fa-solid fa-home"></i>Início</a></li>
+        <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
+        <li><a ui-sref="userRents" ng-click=""><i class="fa-solid fa-key"></i>Reservas</a></li>
+        <!-- <li><a ui-sref="profilepage" ng-click=""><i class="fa-solid fa-user"></i>Perfil</a></li> -->
+        <li><a ui-sref="" ng-click="logout()"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+    </ul>
+</div>

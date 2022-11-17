@@ -1,72 +1,8 @@
-<style>
-    body {
-        background-image: url('../img/alugue-seu-carro.jpeg');
-        background-color: #063146;
-        background-repeat: no-repeat, repeat;
-        background-color: #cccccc;
-        background-size: cover;
-    }
-
-    label #bar-btn,
-    label #cancel {
-        position: absolute;
-        cursor: pointer;
-        background: #042331;
-        border-radius: 3px;
-    }
-
-    label #bar-btn {
-        left: 40px;
-        top: 25px;
-        font-size: 35px;
-        color: aliceblue;
-        padding: 6px 12px;
-    }
-
-    label #cancel {
-        z-index: 1111;
-        left: 195px;
-        top: 17px;
-        font-size: 30px;
-        color: #0a5275;
-        padding: 4px 9px;
-    }
-
-    ul li:hover a {
-        padding-left: 50px;
-    }
-
-    ul a i {
-        margin-right: 16px;
-    }
-
-    #check:checked~.sidebar {
-        left: 0;
-    }
-
-    section img {
-        background: no-repeat;
-        margin-left: 50px;
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
-    }
-</style>
-
-<div class="sidebar">
-    <header>Locadora</header>
-    <ul>
-        <li><a ui-sref="homepage" style="color: aliceblue;"><i class="fa-solid fa-home"></i>Início</a></li>
-        <li><a ui-sref="rent"><i class="fa-solid fa-dollar-sign"></i>Alugar</a></li>
-        <li><a ui-sref=""><i class="fa-solid fa-car"></i>Carros</a></li>
-    </ul>
-</div>
-
 <section>
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
-                <div class="card" style="border-radius: 1rem; background-color: #0a5275;">
+                <div class="card=login" style="border-radius: 1rem; background-color: #0a5275;">
                     <div class="row g-0">
                         <div class="col-md-6 col-lg-5 d-none d-md-block">
                             <img src="../img/istockphoto-1226662588-612x612 (1) (1).png" alt="login form"
@@ -85,25 +21,28 @@
                                     <h4 style="color: aliceblue; margin-bottom: 20px;">Login</h4>
 
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="form2Example17" class="form-control form-control-lg"
-                                            placeholder="Digite seu email..." ng-model="user.email" ng-required="true"/>
                                         <label class="form-label" for="form2Example17"
                                             style="color: aliceblue;">Email</label>
+                                        <input type="email" id="form2Example17" class="form-control form-control-lg"
+                                            placeholder="Digite seu email..." ng-model="user.email"
+                                            ng-required="true" />
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example27" class="form-control form-control-lg"
-                                            placeholder="Digite sua senha..." ng-model="user.password" />
                                         <label class="form-label" for="form2Example27"
                                             style="color: aliceblue;">Senha</label>
+                                        <input type="password" id="form2Example27" class="form-control form-control-lg"
+                                            placeholder="Digite sua senha..." ng-model="user.password" />
                                     </div>
 
                                     <div class="pt-1 mb-4">
                                         <button class="btn btn-dark btn-lg btn-block" type="button"
-                                            style="color: aliceblue;" ng-click="login()" ng-disabled="!user.email || !user.password">Login</button>
+                                            style="color: aliceblue;" ng-click="login()"
+                                            ng-disabled="!user.email || !user.password">Login</button>
                                     </div>
 
-                                    <a class="small text" ui-sref="recoverPassword" style="color: aliceblue;">Esqueceu sua senha?</a>
+                                    <a class="small text" ui-sref="recoverPassword" style="color: aliceblue;">Esqueceu
+                                        sua senha?</a>
                                     <p class="mb-5 pb-lg-2" style="color: aliceblue;">Não possui conta? <a
                                             ui-sref="register" style="color: aliceblue;">Registre-se aqui</a></p>
                                 </form>

@@ -1,4 +1,4 @@
-myApp.service('rentService', function($http, config) {
+myApp.service('rentService', function ($http, config) {
     this.create = rent => $http.post(`${config.baseUrl}/user_rent/car_rent/`, rent);
     this.return = (rentId, carId) => $http.post(`${config.baseUrl}/user_rent/car_return/${rentId}/${carId}`);
     this.get = () => $http.get(`${config.baseUrl}/user_rent`);

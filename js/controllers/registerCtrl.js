@@ -1,7 +1,7 @@
-myApp.controller("registerCtrl",[
-    '$scope', 
-    'userService', 
-    '$state', 
+myApp.controller("registerCtrl", [
+    '$scope',
+    'userService',
+    '$state',
     function ($scope, userService, $state) {
 
         const addUsers = () => {
@@ -13,4 +13,4 @@ myApp.controller("registerCtrl",[
         };
 
         $scope.addUsers = addUsers
-}]);
+    }]);

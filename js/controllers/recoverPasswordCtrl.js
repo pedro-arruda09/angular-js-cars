@@ -1,16 +1,16 @@
-myApp.controller("recoverPasswordCtrl",[
-    '$scope', 
-    'recoverPasswordService', 
-    '$state', 
-    '$rootScope', 
-    'AlertMessage', 
+myApp.controller("recoverPasswordCtrl", [
+    '$scope',
+    'recoverPasswordService',
+    '$state',
+    '$rootScope',
+    'AlertMessage',
     function ($scope, recoverPasswordService, $state, $rootScope, AlertMessage) {
         $scope.form = {
             email: '',
         };
 
         const init = () => {
-            if($rootScope.isLogged) {
+            if ($rootScope.isLogged) {
                 $state.go('userpage');
             }
         };
@@ -41,9 +41,9 @@ myApp.controller("recoverPasswordCtrl",[
             }).catch((e) => {
                 AlertMessage.error("Erro ao enviar sua solicitação!")
             });
-            
+
         };
 
         init();
         $scope.submit = submit;
-}]);
+    }]);

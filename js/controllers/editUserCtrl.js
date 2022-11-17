@@ -1,13 +1,11 @@
 myApp.controller("editUserCtrl", [
-    '$scope', 
-    'userService', 
+    '$scope',
+    'userService',
     '$state',
     'authService',
     function ($scope, userService, $state, authService) {
         const init = () => {
-            userService.show().then(response => {
-                $scope.user = response.data;
-            }).catch((e) => console.log(e))
+            $scope.username = localStorage.getItem("name")
         }
 
         const logout = () => {
@@ -26,31 +24,31 @@ myApp.controller("editUserCtrl", [
                 }
             })
         };
-    
+
         const editUser = () => {
             return userService.edit($scope.user).then(resp => {
-                    console.log(resp.data);
-                    $scope.editUserForm.$setPristine();
-                }).then(() => {
-                    Swal.fire({
-                        title: 'Tem certeza?',
-                        text: "Seu perfil será atualizado",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Sim, atualizar'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $state.go('profilepage');
-                        }
-                    })
-                }).catch(() => {
-                    $scope.error = "Unable to load data.";
-                }); 
+                console.log(resp.data);
+                $scope.editUserForm.$setPristine();
+            }).then(() => {
+                Swal.fire({
+                    title: 'Tem certeza?',
+                    text: "Seu perfil será atualizado",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, atualizar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $state.go('profilepage');
+                    }
+                })
+            }).catch(() => {
+                $scope.error = "Unable to load data.";
+            });
         };
 
         $scope.logout = logout;
         $scope.editUser = editUser;
         init();
-}]);
+    }]);

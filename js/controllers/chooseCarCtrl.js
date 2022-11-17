@@ -1,4 +1,4 @@
-myApp.controller("availableCarsCtrl", [
+myApp.controller("chooseCarCtrl", [
     '$scope',
     'rentService',
     '$location',

@@ -1,9 +1,64 @@
 body {
     background-color: white;
+    background-image: url('../img/alugue-seu-carro.jpeg');
+    background-color: #063146;
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+    background-size: cover;
 }
 
-.table {
-    margin-top: 20px;
+ul li:hover a {
+    padding-left: 50px;
+}
+
+ul a i {
+    margin-right: 16px;
+}
+
+#check:checked~.sidebar {
+    left: 0;
+}
+
+section img {
+    background: no-repeat;
+    margin-left: 50px;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.card {
+    background: #063146;
+    height: 450px;
+    width: 261px;
+    margin: 10px;
+    border-radius: 15px;
+    color: aliceblue;
+}
+
+
+.card:hover {
+    background-color: aliceblue;
+    color: #063146;
+    transform: scale(1.03);
+}
+
+.card-image {
+    background-color: #063146;
+    border-radius: 15px 15px 0 0;
+    height: 170px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+
+#card-img {
+    margin-left: -1px;
+    height: 170px;
+    margin-bottom: 15px;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+    margin-right: 10px;
 }
 
 .form-control {
@@ -16,94 +71,6 @@ body {
 
 * {
     font-family: 'Courier New', Courier, monospace;
-}
-
-.navbar {
-    color: aliceblue;
-    background-color: aliceblue;
-}
-
-#search {
-    height: 55px;
-    margin-top: 6px;
-    margin-left: 6px;
-}
-
-#search2 {
-    height: 55px;
-    margin-top: 6px;
-}
-
-.template {
-    margin-left: 5px;
-}
-
-#inicio {
-    background-color: palegreen;
-    font-size: 30px;
-}
-
-#inicio2 {
-    margin-top: 2px;
-}
-
-#aluguel {
-    font-size: 22px;
-    margin-right: 10px;
-    background-color: dodgerblue;
-}
-
-#ofertas {
-    font-size: 22px;
-    background-color: coral;
-    margin-right: 10px;
-}
-
-#carros-dis {
-    font-size: 22px;
-    background-color: khaki;
-    margin-right: 10px;
-}
-
-#planos {
-    font-size: 22px;
-    background-color: seagreen;
-}
-
-#ajuda {
-    font-size: 22px;
-    background-color: thistle;
-    margin-left: 10px;
-}
-
-#contato {
-    font-size: 22px;
-    background-color: lightsalmon;
-    margin-left: 10px;
-}
-
-#login-btn {
-    font-size: 22px;
-    background-color: #3A86FF;
-    margin-left: 10px;
-}
-
-#login1 {
-    color: #FDF0D5;
-}
-
-/* #planos2, #aluguel2, #ofertas2, #carros2, #ajuda2, #contato2, #login2 {
-    margin-top: 5px;
-    color: black;
-    font-size: 35px;
-} */
-
-#second-nav {
-    /* width: 9999px; */
-    /* margin-left: 600px; */
-    margin-bottom: 20px;
-    font-size: 15px;
-    display: flex;
 }
 
 .fa-user,
@@ -140,152 +107,6 @@ body {
 #registro {
     margin-top: 15px;
     width: 450px;
-}
-
-#exampleInputEmail1,
-#exampleInputPassword1 {
-    width: 450px;
-    margin-bottom: 20px;
-}
-
-#typePassword {
-    display: flex;
-}
-
-#createAcc {
-    background-color: rgb(255, 102, 0);
-    color: white;
-    width: 450px;
-}
-
-#eye-btn {
-    background-color: white;
-    margin-bottom: 16px;
-}
-
-#registerForm {
-    margin: 30px 200px 0px 709px;
-}
-
-#register-btn {
-    margin-top: 10px;
-    margin-left: 145px;
-    width: 220px;
-    background-color: rgb(255, 102, 0);
-    color: white;
-}
-
-#contact-btn {
-    margin-right: 5px;
-}
-
-#hr {
-    margin-top: 20px;
-    margin-right: 920px;
-}
-
-.strike {
-    display: block;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 450px;
-    margin-top: 20px;
-}
-
-.strike>span {
-    position: relative;
-    display: inline-block;
-}
-
-.strike>span:before,
-.strike>span:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 1200px;
-    height: 1px;
-    background: rgb(255, 102, 0);
-}
-
-.strike>span:before {
-    right: 100%;
-    margin-right: 15px;
-}
-
-.strike>span:after {
-    left: 100%;
-    margin-left: 15px;
-}
-
-#login {
-    margin: 50px 0px 0px 800px;
-}
-
-.cards {
-    display: flex;
-    border-radius: 5%;
-    margin-left: 297px;
-}
-
-.card-aluguel,
-.card-ofertas,
-.card-carros {
-    margin: 20px 5px 0px 40px;
-    width: 600px;
-    border-radius: 5%;
-    height: 400px;
-}
-
-#aluguel2,
-#ofertas2,
-#carros2 {
-    color: aliceblue;
-    font-size: 35px;
-    text-align: center;
-
-}
-
-#planos2,
-#ajuda2,
-#contato2 {
-    color: aliceblue;
-    font-size: 39px;
-    text-align: center;
-}
-
-/* 
-.card-img-top {
-    border-radius: 5%;
-} */
-
-.card-img-top {
-    width: 600px;
-    height: 300px;
-}
-
-.car-cards {
-    display: flex;
-    border-radius: 5%;
-    margin-left: 97px;
-}
-
-.card-carros {
-    margin: 20px 5px 0px 40px;
-    width: 500px;
-    border-radius: 5%;
-    height: 400px;
-}
-
-.car-card-img-top {
-    width: 500px;
-    height: 300px;
-}
-
-#car2 {
-    color: aliceblue;
-    font-size: 40px;
-    text-align: center;
 }
 
 .modal {
@@ -340,10 +161,6 @@ body {
     transition: 4s;
 }
 
-#check {
-    display: none;
-}
-
 #rent-card {
     width: 700px;
     margin: 100px 0px 0px 700px;
@@ -378,4 +195,85 @@ body {
 .grid-item {
     padding: 20px;
     font-size: 30px;
+}
+
+#selectCars {
+    background-color: black;
+    color: aliceblue;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px 50px;
+}
+
+#card-rent-car-img {
+    margin-left: -1px;
+    height: 235px;
+    margin-bottom: 15px;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+    margin-right: 10px;
+}
+
+.card-rent-car {
+    background: #063146;
+    width: 362px;
+    margin: 10px;
+    border-radius: 15px;
+    color: aliceblue;
+    height: auto;
+}
+
+.card-rent-car h2 {
+    margin-top: 70px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-rent-car h4 {
+    margin-left: 15px;
+}
+
+.card-no-rent {
+    background-color: #0a5275;
+    width: 500px;
+    padding: 25px;
+    margin: 50px 0px 0px 690px;
+    border-radius: 5%;
+}
+
+.card-no-rent h1 {
+    color: aliceblue;
+    text-align: center;
+}
+
+#btn-reservar {
+    margin-left: 130px;
+    width: 200px;
+    height: 100px;
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+.card-my-rents {
+    background-color: #0a5275;
+    width: 500px;
+    padding: 25px;
+    margin: 50px 0px 0px 0px;
+    border-radius: 5%;
+}
+
+.card-my-rents h1 {
+    text-align: center;
+    color: aliceblue;
+}
+
+#return-btn {
+    width: 300px; 
+    height: 60px; 
+    margin-left: 75px; 
+    margin-top: 10px; 
+    font-size: 25px;
 }

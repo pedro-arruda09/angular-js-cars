@@ -1,0 +1,35 @@
+<section>
+    <header id="header2" style="margin-left: 166px;">Aluguel</header>
+
+    <section class="vh-100" style="margin-top: 50px; color: aliceblue;">
+        <div class="card-rent" id="rent-card">
+            <div class="card-header" style="margin: 100px 0px 20px 196px">
+                <h3>Alugue seu carro</h3>
+            </div>
+            <form id="rent-form">
+                <input ng-model="capitalName" ng-model-options="{ debounce: 500 }" autocomplete="off"
+                    typeahead-on-select="selectCapital($item)" uib-typeahead="capital.name for capital in listCapitals()"
+                    class="form-control" type="text" placeholder="Pesquisar cidades..."
+                    style="height: 48px; width: 448px" id="capital-input">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="form3Example4">A partir de</label>
+                        <input type="date" id="form3Example4" class="form-control form-control-lg" placeholder=""
+                            ng-model="form.rent_started_at" style="width: 224px; height: 48px;" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="form3Example5">Aluguel até</label>
+                        <input type="date" id="form3Example5" class="form-control form-control-lg" placeholder=""
+                            ng-model="form.rent_end_at" style="width: 224px; height: 48px; margin-left: -67px;" />
+                    </div>
+                </div>
+
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="button" class="btn btn-primary btn-lg" id="rent-btn" ng-click="setQueryString()">
+                        <i class="fa-solid fa-magnifying-glass"></i>Pesquisar carros</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+</section>

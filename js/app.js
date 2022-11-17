@@ -11,7 +11,7 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         controller: "userCtrl"
     }).state("rent", {
         url: "/aluguel",
-        templateUrl: "view/rent.html",
+        templateUrl: "view/store-rent.html",
         controller: "storeRentCtrl",
     }).state("cars", {
         url: "/carros",
@@ -31,22 +31,22 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
         controller: "changePasswordCtrl"
     }).state("register", {
         url: "/registro",
-        templateUrl: "view/registro.html",
+        templateUrl: "view/register.html",
         controller: "registerCtrl"
     }).state("userpage", {
-        url: "/inicio/perfil",
+        url: "/inicio/usuario",
         templateUrl: "view/userpage.html",
         controller: "userCtrl",
         onEnter: isAuthorized
     }).state("userRents", {
         url: "/meus-alugueis",
-        templateUrl: "view/userRents.html",
-        controller: "rentCtrl",
+        templateUrl: "view/my-rents.html",
+        controller: "myRentsCtrl",
         onEnter: isAuthorized
     }).state("toRentCars", {
         url: "/escolher-carro",
-        templateUrl: "view/toRentCar.html",
-        controller: "availableCarsCtrl",
+        templateUrl: "view/choose-car.html",
+        controller: "chooseCarCtrl",
     }).state("profilepage", {
         url: "/meu-perfil",
         templateUrl: "view/profilePage.html",
@@ -66,11 +66,15 @@ myApp.config(function ($stateProvider, $httpProvider, $urlRouterProvider) {
 
 const isAuthorized = ($state, $rootScope) => {
     const isLogged = localStorage.getItem("token");
-    
+
     if (!isLogged) {
-      $state.go("login");
-      return;
+        $rootScope.isLogged = true;
+        return;
     }
 
     $rootScope.isLogged = true;
 };
+
+myApp.run(function ($rootScope) {
+    $rootScope.name = "TESTE"
+})

@@ -1,10 +1,10 @@
 myApp.controller('authCtrl', [
-    '$scope', 
-    'authService', 
-    '$state', 
-    '$rootScope', 
-    'AlertMessage', 
-    function($scope, authService, $state, $rootScope, AlertMessage){
+    '$scope',
+    'authService',
+    '$state',
+    '$rootScope',
+    'AlertMessage',
+    function ($scope, authService, $state, $rootScope, AlertMessage) {
 
         $scope.model = "auth"
         const login = () => {
@@ -42,4 +42,4 @@ myApp.controller('authCtrl', [
 
         $scope.login = login;
         $scope.logout = logout;
-}]);
+    }]);

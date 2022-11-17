@@ -1,16 +1,17 @@
-myApp.controller("userCtrl",[
-    '$scope', 
-    'userService', 
-    'authService', 
-    '$state', 
-    '$window', 
-    '$uibModal', 
+myApp.controller("userCtrl", [
+    '$scope',
+    'userService',
+    'authService',
+    '$state',
+    '$window',
+    '$uibModal',
     '$rootScope',
     function ($scope, userService, authService, $state, $uibModal, $rootScope) {
-        
+
         const init = () => {
             userService.show().then(response => {
                 $scope.user = response.data;
+                localStorage.setItem("name", $scope.user.name);
             }).catch((e) => console.log(e))
         }
 
@@ -36,7 +37,7 @@ myApp.controller("userCtrl",[
             authService.login($scope.user.email, $scope.user.password)
                 .then((resp) => {
                     localStorage.setItem('email', $scope.user.email)
-                    localStorage.setItem('token', resp.data.token)
+                    localStorage.setItem('token', resp.data)
                     $rootScope.isLogged = true;
                     $state.path('/inicio/perfil')
                 })
@@ -64,4 +65,4 @@ myApp.controller("userCtrl",[
         $scope.logout = logout;
         $scope.login = login;
         init();
-}]);
+    }]);

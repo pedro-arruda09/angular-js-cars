@@ -1,4 +1,4 @@
-myApp.service('userService', function($http, config) {
+myApp.service('userService', function ($http, config) {
     this.create = user => $http.post(`${config.baseUrl}/users`, user);
     this.edit = user => $http.put(`${config.baseUrl}/users`, user);
     this.get = () => $http.get(`${config.baseUrl}/users`);

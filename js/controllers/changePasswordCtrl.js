@@ -1,10 +1,10 @@
-myApp.controller("changePasswordCtrl",[
-    '$scope', 
+myApp.controller("changePasswordCtrl", [
+    '$scope',
     'recoverPasswordService',
-    '$state', 
-    '$rootScope', 
-    'AlertMessage', 
-    '$location', 
+    '$state',
+    '$rootScope',
+    'AlertMessage',
+    '$location',
     function ($scope, recoverPasswordService, $state, $rootScope, AlertMessage, $location) {
         $scope.form = {
             password: '',
@@ -66,4 +66,4 @@ myApp.controller("changePasswordCtrl",[
 
         init();
         $scope.submit = submit;
-}]);
+    }]);

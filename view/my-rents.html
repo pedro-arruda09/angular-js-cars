@@ -1,0 +1,23 @@
+<section>
+  <header id="header2">Olá, {{user.name}}</header>
+  <div class="grid-container" style="justify-content: center;">
+    <section class="grid-item" ng-repeat="userRent in userRents">
+      <div class="card-my-rents">
+        <h1>{{userRent.car.model}}</h1>
+        <h1>{{userRent.car.daily_price | currency}}</h1>
+        <h6></h6>
+        <h6></h6>
+        <button ng-click="returnRent(userRent.id, userRent.car.id)" type="button" class="btn btn-danger"
+          id="return-btn">Devolver</button>
+      </div>
+    </section>
+  </div>
+  <section class="grid-item" ng-show="!userRents.length">
+    <div class="card-no-rent">
+      <h1>Você não possui nenhuma reserva, deseja alugar algum carro?</h4>
+        <a ui-sref="rent"><button type="button" class="btn btn-success" id="btn-reservar">RESERVAR</button></a>
+    </div>
+  </section>
+  </div>
+</section>
+</div>

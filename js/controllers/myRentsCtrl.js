@@ -1,10 +1,11 @@
-myApp.controller('rentCtrl',[
-    '$scope', 
-    'carService', 
-    'rentService', 
-    'userService', 
+myApp.controller('myRentsCtrl', [
+    '$scope',
+    'carService',
+    'rentService',
+    'userService',
     '$uibModal',
-    function ($scope, carService, rentService, userService, $uibModal) {
+    '$state',
+    function ($scope, carService, rentService, userService, $uibModal, $state) {
         const init = () => {
             userService.show().then(response => {
                 $scope.user = response.data;
@@ -38,7 +39,7 @@ myApp.controller('rentCtrl',[
                 $scope.error = "Unable to load data.";
             });
         };
-        
+
         const openRentCartModal = () => {
             return $uibModal.open({
                 templateUrl: 'view/totalRentModal.html',
@@ -48,9 +49,22 @@ myApp.controller('rentCtrl',[
             })
         }
 
-        const cancel = (cancel) => {
-            // $uibModal.close(cancel);
-        }
+        const logout = () => {
+            Swal.fire({
+                title: 'Tem certeza?',
+                text: "Você será deslogado",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sim, deslogar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $state.go('homepage');
+                    authService.logout();
+                }
+            })
+        };
 
         const returnRent = (rentId, carId) => {
             return rentService.return(rentId, carId).then(() => {
@@ -61,7 +75,7 @@ myApp.controller('rentCtrl',[
                     confirmButtonText: 'Devolver',
                     denyButtonText: `Não devolver`,
                 }).then((result) => {
-                    if (result.isConfirmed) {   
+                    if (result.isConfirmed) {
                         localStorage.setItem("rent_id", rentId);
                         openRentCartModal();
                     } else if (result.isDenied) {
@@ -78,5 +92,5 @@ myApp.controller('rentCtrl',[
         $scope.listCars = listCars
         $scope.returnRent = returnRent;
         $scope.openRentCartModal = openRentCartModal;
-        $scope.cancel = cancel;
-}]);
+        $scope.logout = logout;
+    }]);

@@ -1,10 +1,11 @@
 myApp.controller("rentCartCtrl", [
-    '$scope', 
-    'carService', 
-    'rentService', 
-    '$location', 
-    '$uibModal', 
-    function ($scope, carService, rentService, $location, $uibModal) {
+    '$scope',
+    'carService',
+    'rentService',
+    '$location',
+    '$uibModal',
+    '$state',
+    function ($scope, carService, rentService, $location, $uibModal, $state) {
 
         const carIdParsed = parseInt($location.search().carro_id);
 
@@ -12,12 +13,13 @@ myApp.controller("rentCartCtrl", [
             'car_id': [carIdParsed],
             'rent_started_at': $location.search().inicio,
             'rent_end_at': $location.search().fim,
-            'city': $location.search().cidade,
+            'capital_id': $location.search().cidade_id,
         };
 
         const getQuery = () => {
-        
+
             $scope.city = $location.search().cidade
+            $scope.capital_id = $location.search().cidade_id
             $scope.start_rent = $location.search().inicio
             $scope.end_rent = $location.search().fim
             $scope.car_id = $location.search().carro_id
@@ -57,4 +59,4 @@ myApp.controller("rentCartCtrl", [
 
         $scope.finishRent = finishRent;
         getQuery();
-}]);
+    }]);

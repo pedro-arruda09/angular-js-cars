@@ -9,6 +9,7 @@
         <h6>Ano: {{availableCar.car.year}}</h6>
         <h6>Diária: {{availableCar.car.daily_price | currency}}</h6>
         <h6>Chassi: {{availableCar.car.chassi}}</h6>
+        <a ng-click="setQueryCar(availableCar.car.id)" id="selectCars" href="">Selecionar</a>
       </div>
     </section>
   </div>

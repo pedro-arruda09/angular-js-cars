@@ -1,8 +1,8 @@
 myApp.controller("addRentCtrl", [
-    '$scope', 
-    'carService', 
-    'rentService', 
-    'capitalService',  
+    '$scope',
+    'carService',
+    'rentService',
+    'capitalService',
     function ($scope, carService, rentService, capitalService) {
 
         $scope.form = {
@@ -22,7 +22,7 @@ myApp.controller("addRentCtrl", [
                 $scope.cars = resp.data;
             }).catch(() => {
                 $scope.error = "Unable to load data.";
-            }); 
+            });
         };
 
         const addCar = () => {
@@ -56,4 +56,4 @@ myApp.controller("addRentCtrl", [
 
         $scope.addRent = addRent;
         init();
-}]);
+    }]);
